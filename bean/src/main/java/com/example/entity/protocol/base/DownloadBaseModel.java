@@ -17,4 +17,5 @@ import java.io.Serializable;
 @EqualsAndHashCode(callSuper = false)
 public class DownloadBaseModel implements Serializable {
 
+    private String name;
 }

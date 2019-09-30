@@ -10,4 +10,6 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @RequiredArgsConstructor
 public class CommonUssdServiceImpl extends BaseServiceImpl implements ICommonUssdService {
+
+    //private final IUss
 }
