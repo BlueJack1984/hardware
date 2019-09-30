@@ -5,8 +5,10 @@ import com.example.business.bip.IOldProtocolBipService;
 import com.example.constant.protocol.OldProtocolCommandTypeConstant;
 import com.example.entity.protocol.base.DownloadBaseModel;
 import com.example.entity.protocol.base.UploadBaseModel;
-import com.example.entity.protocol.download.OldProtocolDownloadModel;
+import com.example.entity.protocol.download.old.OldProtocolDownloadLocalDataModel;
 import com.example.entity.protocol.upload.*;
+import com.example.entity.protocol.upload.old.OldProtocolUploadPorModel;
+import com.example.entity.protocol.upload.old.OldProtocolUploadPositionModel;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -43,16 +45,16 @@ public class OldProtocolBipServiceImpl implements IOldProtocolBipService {
             handlePorUploadBusiness(porModel);
         }else if(OldProtocolCommandTypeConstant.PUSH_COMMAND_BUSINESS_VALUE.equals(commandType)) {
             log.info("进入旧协议push command业务模块！");
-            OldProtocolUploadPushCommandModel pushCommandModel = (OldProtocolUploadPushCommandModel)uploadBaseModel;
-            downloadBaseModel = handlePushCommandBusiness(pushCommandModel);
+            //OldProtocolUploadPushCommandModel pushCommandModel = (OldProtocolUploadPushCommandModel)uploadBaseModel;
+            //downloadBaseModel = handlePushCommandBusiness(pushCommandModel);
         }else if(OldProtocolCommandTypeConstant.PUSH_COMMAND_NEW_BUSINESS_VALUE.equals(commandType)) {
             log.info("进入旧协议push command new业务模块！");
-            OldProtocolUploadPushCommandNewModel pushCommandNewModel = (OldProtocolUploadPushCommandNewModel)uploadBaseModel;
-            downloadBaseModel = handlePushCommandNewBusiness(pushCommandNewModel);
+            //OldProtocolUploadPushCommandNewModel pushCommandNewModel = (OldProtocolUploadPushCommandNewModel)uploadBaseModel;
+            //downloadBaseModel = handlePushCommandNewBusiness(pushCommandNewModel);
         }else if(OldProtocolCommandTypeConstant.DOWNLOAD_GLOBAL_TELECOM_DATA_BUSINESS_VALUE.equals(commandType)) {
             log.info("进入旧协议download global telecom data业务模块！");
-            OldProtocolUploadGlobalTelecomDataModel globalTelecomDataModel = (OldProtocolUploadGlobalTelecomDataModel)uploadBaseModel;
-            downloadBaseModel = handleDownloadGlobalTelecomDataBusiness(globalTelecomDataModel);
+            //OldProtocolUploadGlobalTelecomDataModel globalTelecomDataModel = (OldProtocolUploadGlobalTelecomDataModel)uploadBaseModel;
+            //downloadBaseModel = handleDownloadGlobalTelecomDataBusiness(globalTelecomDataModel);
         }else {
             log.info("旧协议解析的命令参数无法匹配，参数错误，值为：" + commandType);
         }
@@ -61,7 +63,7 @@ public class OldProtocolBipServiceImpl implements IOldProtocolBipService {
 
     public DownloadBaseModel handlePositionUpdateBusiness(OldProtocolUploadPositionModel positionModel) {
 
-        OldProtocolDownloadModel oldProtocolDownloadModel = new OldProtocolDownloadModel();
+        OldProtocolDownloadLocalDataModel oldProtocolDownloadModel = new OldProtocolDownloadLocalDataModel();
 
         return oldProtocolDownloadModel;
     }
@@ -69,15 +71,15 @@ public class OldProtocolBipServiceImpl implements IOldProtocolBipService {
 
     }
     public DownloadBaseModel handlePushCommandBusiness(OldProtocolUploadPushCommandModel pushCommandModel) {
-        OldProtocolDownloadModel oldProtocolDownloadModel = new OldProtocolDownloadModel();
+        OldProtocolDownloadLocalDataModel oldProtocolDownloadModel = new OldProtocolDownloadLocalDataModel();
         return oldProtocolDownloadModel;
     }
     public DownloadBaseModel handlePushCommandNewBusiness(OldProtocolUploadPushCommandNewModel pushCommandNewModel) {
-        OldProtocolDownloadModel oldProtocolDownloadModel = new OldProtocolDownloadModel();
+        OldProtocolDownloadLocalDataModel oldProtocolDownloadModel = new OldProtocolDownloadLocalDataModel();
         return oldProtocolDownloadModel;
     }
     public DownloadBaseModel handleDownloadGlobalTelecomDataBusiness(OldProtocolUploadGlobalTelecomDataModel globalTelecomDataModel) {
-        OldProtocolDownloadModel oldProtocolDownloadModel = new OldProtocolDownloadModel();
+        OldProtocolDownloadLocalDataModel oldProtocolDownloadModel = new OldProtocolDownloadLocalDataModel();
         return oldProtocolDownloadModel;
     }
 

@@ -14,7 +14,7 @@ public class OldProtocolAutoapnServiceImpl implements IOldProtocolAutoapnService
     @Override
     public String handleUssdDetailedBusiness(String message) {
 
-
+        String name = "curry";
         return null;
     }
 }

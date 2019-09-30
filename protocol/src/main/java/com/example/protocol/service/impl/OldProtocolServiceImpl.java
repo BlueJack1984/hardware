@@ -60,6 +60,7 @@ public class OldProtocolServiceImpl implements IOldProtocolService {
             //打包加密
             String downMessage = oldProtocolPackService.pack(carrier.getDownloadBaseModel());
             carrier.setDownMessage(downMessage);
+            carrier.setDownloadBaseModel(null);
         }
         //此处可以对返回的下行消息进行处理，或者存放到消息队列之中
         return carrierList;

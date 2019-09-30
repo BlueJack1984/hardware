@@ -1,6 +1,5 @@
-package com.example.entity.protocol.upload;
+package com.example.entity.protocol.base;
 
-import com.example.entity.protocol.base.OldProtocolUploadBaseModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -14,6 +13,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class OldProtocolUploadPushCommandModel extends OldProtocolUploadBaseModel {
+public class OldProtocolDownloadBaseModel extends DownloadBaseModel{
+
 
 }

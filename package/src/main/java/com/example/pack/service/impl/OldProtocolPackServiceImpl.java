@@ -6,13 +6,14 @@ import com.example.entity.pack.OldProtocolPackSubject;
 import com.example.entity.pack.OldProtocolUnpackSubject;
 import com.example.entity.protocol.base.DownloadBaseModel;
 import com.example.entity.protocol.base.UploadBaseModel;
-import com.example.entity.protocol.download.OldProtocolDownloadModel;
+import com.example.entity.protocol.download.old.OldProtocolDownloadLocalDataModel;
 import com.example.entity.protocol.upload.*;
+import com.example.entity.protocol.upload.old.OldProtocolUploadPorModel;
+import com.example.entity.protocol.upload.old.OldProtocolUploadPositionModel;
 import com.example.pack.service.ICommonPackService;
 import com.example.pack.service.IOldProtocolPackService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -123,7 +124,7 @@ public class OldProtocolPackServiceImpl implements IOldProtocolPackService {
     @Override
     public String pack(DownloadBaseModel downloadBaseModel) {
         //类型转换
-        OldProtocolDownloadModel oldProtocolDownloadModel = (OldProtocolDownloadModel)downloadBaseModel;
+        OldProtocolDownloadLocalDataModel oldProtocolDownloadModel = (OldProtocolDownloadLocalDataModel)downloadBaseModel;
 
         return null;
     }

@@ -1,6 +1,6 @@
 package com.example.entity.protocol.download;
 
-import com.example.entity.protocol.base.DownloadBaseModel;
+import com.example.entity.protocol.base.NewProtocolDownloadBaseModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -14,5 +14,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class NewProtocolDownloadModel extends DownloadBaseModel {
+public class NewProtocolDownloadPushCommandModel extends NewProtocolDownloadBaseModel {
+
 }
