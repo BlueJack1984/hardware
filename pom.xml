@@ -28,6 +28,9 @@
         <module>business</module>
         <module>lu-rabbitmq</module>
         <module>gateway-activemq</module>
+        <module>library</module>
+        <module>dubbo</module>
+        <module>zookeeper</module>
     </modules>
 
     <properties>
