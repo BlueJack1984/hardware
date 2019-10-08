@@ -3,11 +3,13 @@ package com.example.business.bip.impl;
 import com.example.business.bip.ICommonBipService;
 import com.example.business.bip.INewProtocolBipService;
 import com.example.constant.protocol.NewProtocolCommandTypeConstant;
+import com.example.core.service.IDeviceInitRecService;
 import com.example.entity.protocol.base.DownloadBaseModel;
 import com.example.entity.protocol.base.UploadBaseModel;
 import com.example.entity.protocol.upload.NewProtocolUploadPorModel;
 import com.example.entity.protocol.upload.NewProtocolUploadPositionModel;
 import com.example.entity.protocol.upload.NewProtocolUploadReceiveDataPorModel;
+import com.example.entity.table.DeviceInitRec;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -23,6 +25,7 @@ import java.util.List;
 public class NewProtocolBipServiceImpl implements INewProtocolBipService {
 
     private final ICommonBipService bipCommonService;
+    private final IDeviceInitRecService deviceInitRecService;
 
     @Override
     public DownloadBaseModel handleDetailedBusinessByCommandType(UploadBaseModel uploadBaseModel) {
@@ -55,22 +58,32 @@ public class NewProtocolBipServiceImpl implements INewProtocolBipService {
     }
 
     public DownloadBaseModel handlePositionUpdateBusiness(NewProtocolUploadPositionModel positionModel) {
-
-        String mcc = bipCommonService.getMccByLocationInformation(positionModel.getLocationInformation());
-        //验证mcc
-        Boolean mccResult = commonProtocolService.checkPositionUpdateMcc(mcc);
-        String imei = body.getImei();
+        //首先判断设备的初始化数据
+        String imei = positionModel.getImei();
         List<DeviceInitRec> deviceInitRecList = deviceInitRecService.getListByImei(imei);
         //验证设备初始化信息记录表
-        Boolean deviceResult = commonProtocolService.validateDeviceInitRecord(deviceInitRecList);
-        if(false == mccResult || false == deviceResult) {
+        Boolean deviceResult = bipCommonService.validateDeviceInitRecord(deviceInitRecList);
+        if(false == deviceResult) {
             log.info("");
             return null;
         }
-        log.info("");
+        String mcc = bipCommonService.getMccByLocationInformation(positionModel.getLocationInformation());
+        Boolean mccResult = bipCommonService.checkPositionUpdateMccIsFFF(mcc);
+        if(true == mccResult) {
+            //这里的mcc判断为FFF，处理时间同步事件
+            log.info("位置上报的mcc参数为FFF，此时进行同步时间参数功能处理！");
+            handleUploadMccParameterFFFBusiness(positionModel);
+            return null;
+        }
+        log.info("设备初始化数据和mcc参数均满足要求！");
         DeviceInitRec deviceInitRec = deviceInitRecList.get(0);
-        commonProtocolService.pushCommandSwitchGlobalStatus(imei);
-        String primaryIccid = body.getImei();
+        if(true) {
+            log.info("");
+            DownloadBaseModel downloadBaseModel = bipCommonService.pushCommandSwitchGlobalStatus(imei);
+            return downloadBaseModel;
+        }
+
+        String primaryIccid = positionModel.getPrimaryIccid();
         if(primaryIccid.equals(deviceInitRec)) {
             //种子主号
             //handle
@@ -99,5 +112,9 @@ public class NewProtocolBipServiceImpl implements INewProtocolBipService {
     public void handleReceiveDataPorBusiness(NewProtocolUploadReceiveDataPorModel receiveDataPorModel) {
 
         log.info("");
+    }
+
+    void handleUploadMccParameterFFFBusiness(NewProtocolUploadPositionModel positionModel) {
+
     }
 }

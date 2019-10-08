@@ -47,4 +47,10 @@ public class BaseServiceImpl implements IBaseService{
         String tradeNumber = assetManageBusinessService.getOtaTradeNumber();
         return tradeNumber;
     }
+
+    @Override
+    public Boolean checkPositionUpdateMccIsFFF(String mcc) {
+        return null;
+    }
+
 }

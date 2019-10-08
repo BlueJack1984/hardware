@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iot.dao.assetOrderDao.IAssetOrderDao">
+	<sql id="c_asset_order_t">
+		_asset_order_t.id, _asset_order_t.order_id orderId,
+		_asset_order_t.asset_id assetId, _asset_order_t.package_code packageCode,
+		_asset_order_t.package_name packageName, _asset_order_t.package_flow packageFlow,
+		_asset_order_t.partner_code partnerCode, _asset_order_t.partner_name partnerName,
+		_asset_order_t.order_period orderPeriod, _asset_order_t.status,
+		_asset_order_t.order_date orderDate, _asset_order_t.order_type orderType,
+		_asset_order_t.oper_account operAccount, _asset_order_t.cover_country coverCountry,
+		_asset_order_t.actual_start_time actualStartTime, _asset_order_t.planned_end_time plannedEndTime,
+		_asset_order_t.actual_end_time actualEndTime, _asset_order_t.refueling_bag_flag refuelingBagFlag,
+ 		_asset_order_t.inuse_package_type inusePackageType, _asset_order_t.activate_location activateLocation,
+ 		_asset_order_t.sale_price salePrice, _asset_order_t.cancel_time cancelTime,
+ 		_asset_order_t.cancel_reason cancelReason, _asset_order_t.pay_type payType,
+  		_asset_order_t.pay_amount payAmount, _asset_order_t.buy_type buyType,
+  		_asset_order_t.package_type packageType, _asset_order_t.order_purpose orderPurpose,
+  		_asset_order_t.ahead_finish_reason aheadFinishReason, _asset_order_t.used_base_flow usedBaseFlow,
+  		_asset_order_t.flow_use_rate flowUseRate, _asset_order_t.used_refueling_flow usedRefuelingFlow,
+  		_asset_order_t.used_flow usedFlow, _asset_order_t.order_total_flow orderTotalFlow,
+		_asset_order_t.is_first_order isFirstOrder, _asset_order_t.has_test_flow hasTestFlow,
+		_asset_order_t.test_flow testFlow, _asset_order_t.data_order_type dataOrderType,
+  		_asset_order_t.pause_time pauseTime, _asset_order_t.pause_reason pauseReason,
+		_asset_order_t.exception_flag exceptionFlag, _asset_order_t.exception_cause exceptionCause
+	</sql>
+	<sql id="t_asset_order_t">
+		asset_order_t
+	</sql>
+
+	<select id="queryOrderByCode" resultType="com.iot.otaBean.assetOrder.AssetOrder" parameterType="String">
+		select <include refid="c_asset_order_t"/>
+		from <include refid="t_asset_order_t"/> _asset_order_t
+		where order_id= #{orderId} limit 1;
+	</select>
+	
+	<select id="queryOrderByAssetId" resultType="com.iot.otaBean.assetOrder.AssetOrder" parameterType="String">
+		select <include refid="c_asset_order_t"/>
+		from <include refid="t_asset_order_t"/> _asset_order_t
+		where asset_id= #{assetId} and order_purpose = '2' order by order_date asc;
+	</select>
+
+ 	<select id="queryStartedOrders" resultType="com.iot.otaBean.assetOrder.AssetOrder" parameterType="String">
+        select <include refid="c_asset_order_t"/>
+        from <include refid="t_asset_order_t"/> _asset_order_t
+		where asset_id = #{imei} and status = '2' and order_purpose = '2'
+		and planned_end_time &gt; #{now} order by actual_start_time asc;
+	</select>
+	
+	 <select id="queryPauseOrders" resultType="com.iot.otaBean.assetOrder.AssetOrder" parameterType="String">
+        select <include refid="c_asset_order_t"/>
+        from <include refid="t_asset_order_t"/> _asset_order_t
+		where asset_id = #{imei} and instr(cover_country,#{mcc})
+		and status = '5' and order_purpose = '2' and planned_end_time &gt; #{now}
+		order by pause_time asc;
+	</select>
+
+	<select id="queryNotStartedOrders" resultType="com.iot.otaBean.assetOrder.AssetOrder" parameterType="String">
+        select <include refid="c_asset_order_t"/>
+        from <include refid="t_asset_order_t"/> _asset_order_t
+		where status = '1' and asset_id = #{imei} and instr(cover_country,#{mcc})
+		and order_purpose = '2' order by data_order_type desc, order_date asc;
+	</select>
+
+	<update id="updateException" >
+		  update <include refid="t_asset_order_t"/>
+		  set exception_flag=#{newFlag},exception_cause = #{newCause}
+		  where order_id = #{orderCode};
+	</update>
+
+	<select id="getOneDayStartedOrders" parameterType="java.util.Date" resultType="com.iot.otaBean.assetOrder.AssetOrder">
+		select <include refid="c_asset_order_t"/>
+		from  <include refid="t_asset_order_t"/> _asset_order_t
+		where actual_start_time &gt;= #{startTime} and actual_start_time &lt;= #{endTime}
+	</select>
+</mapper>    
+    
+  

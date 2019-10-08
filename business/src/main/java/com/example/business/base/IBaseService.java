@@ -17,4 +17,8 @@ public interface IBaseService {
      * 获取当次流水号
      */
     String getOtaTradeNumber();
+    /**
+     * 校验位置上报的mcc参数是否符合要求
+     */
+    Boolean checkPositionUpdateMccIsFFF(String mcc);
 }
