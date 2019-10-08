@@ -15,4 +15,20 @@ import lombok.NoArgsConstructor;
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class NewProtocolUploadReceiveDataPorModel extends NewProtocolUploadBaseModel {
+    /**
+     *
+     */
+    private String iccid;
+    /**
+     *
+     */
+    private String imei;
+    /**
+     *
+     */
+    private String batchNumber;
+    /**
+     *
+     */
+    private String RequestMessageBitMap;
 }

@@ -16,5 +16,40 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = false)
 public class NewProtocolUploadPositionModel extends NewProtocolUploadBaseModel {
 
+    /**
+     *
+     */
+    private String checkNumber;
+    /**
+     *
+     */
     private String locationInformation;
+    /**
+     *
+     */
+    private String primaryIccid;
+    /**
+     *
+     */
+    private String carryingCapacity;
+    /**
+     *
+     */
+    private String imei;
+    /**
+     *
+     */
+    private String imsi;
+    /**
+     * bip时存在
+     */
+    private String bipImsi;
+    /**
+     * bip时存在
+     */
+    private String cellId;
+    /**
+     *
+     */
+    private String latestOtaTradeNumber;
 }

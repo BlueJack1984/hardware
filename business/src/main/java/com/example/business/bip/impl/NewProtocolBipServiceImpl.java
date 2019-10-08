@@ -85,8 +85,16 @@ public class NewProtocolBipServiceImpl implements INewProtocolBipService {
     }
     public void handlePorUploadBusiness(NewProtocolUploadPorModel porModel) {
 
-        log.info("");
+        String commandType = porModel.getCommandType();
+        if(NewProtocolCommandTypeConstant.DOWNLOAD_LOCAL_DATA_BUSINESS_VALUE.equals(commandType)) {
+            log.info("");
 
+        }else if(NewProtocolCommandTypeConstant.DOWNLOAD_GLOBAL_DATA_BUSINESS_VALUE.equals(commandType)) {
+            log.info("");
+        }else if(NewProtocolCommandTypeConstant.PUSH_COMMAND_BUSINESS_VALUE.equals(commandType)) {
+            log.info("");
+        }
+        log.info("");
     }
     public void handleReceiveDataPorBusiness(NewProtocolUploadReceiveDataPorModel receiveDataPorModel) {
 
