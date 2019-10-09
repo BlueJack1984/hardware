@@ -16,4 +16,12 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = false)
 public class OldProtocolDownloadLockCardModel extends OldProtocolDownloadBaseModel {
 
+    /**
+     *
+     */
+    private String primaryIccid;
+    /**
+     *
+     */
+    private String otaTradeNumber;
 }

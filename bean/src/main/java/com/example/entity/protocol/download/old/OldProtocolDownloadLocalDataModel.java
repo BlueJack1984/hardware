@@ -16,4 +16,44 @@ import lombok.NoArgsConstructor;
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class OldProtocolDownloadLocalDataModel extends OldProtocolDownloadBaseModel {
+    /**
+     *
+     */
+    private String primaryIccidSuffix;
+    /**
+     *
+     */
+    private String callControlFlag;
+    /**
+     *
+     */
+    private String expireTime;
+    /**
+     *
+     */
+    private String otaTradeNumber;
+    /**
+     *
+     */
+    private String coverMcc;
+    /**
+     *
+     */
+    private String plmn;
+    /**
+     *
+     */
+    private String imsi;
+    /**
+     *
+     */
+    private String algorithmFlag;
+    /**
+     *
+     */
+    private String dataKeyIndex;
+    /**
+     *
+     */
+    private String keyData;
 }

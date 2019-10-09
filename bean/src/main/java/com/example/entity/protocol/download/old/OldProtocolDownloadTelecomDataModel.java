@@ -15,4 +15,36 @@ import lombok.NoArgsConstructor;
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class OldProtocolDownloadTelecomDataModel extends OldProtocolDownloadBaseModel {
+    /**
+     *
+     */
+    private String otaTradeNumber;
+    /**
+     * LV结构
+     */
+    private String apn;
+    /**
+     * LV结构
+     */
+    private String sca;
+    /**
+     *
+     */
+    private String imsiTel;
+    /**
+     *
+     */
+    private String aKey;
+    /**
+     *
+     */
+    private String uimidEsn;
+    /**
+     *
+     */
+    private String hrpdSs;
+    /**
+     *
+     */
+    private String hrpdUpp;
 }

@@ -20,14 +20,6 @@ public class OldProtocolDownloadGlobalTelecomDataModel extends OldProtocolDownlo
      */
     private String otaTradeNumber;
     /**
-     * LV结构
-     */
-    private String apn;
-    /**
-     * LV结构
-     */
-    private String sca;
-    /**
      *
      */
     private String imsiTel;
@@ -38,13 +30,17 @@ public class OldProtocolDownloadGlobalTelecomDataModel extends OldProtocolDownlo
     /**
      *
      */
-    private String UimidEsn;
+    private String uimidEsn;
+    /**
+     * LV结构
+     */
+    private String hrpdSs;
+    /**
+     * LV结构
+     */
+    private String hrpdUpp;
     /**
      *
      */
-    private String HrpdSs;
-    /**
-     *
-     */
-    private String HrpdUpp;
+    private String pushCommand;
 }

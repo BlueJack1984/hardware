@@ -16,4 +16,16 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = false)
 public class OldProtocolDownloadPushCommandModel extends OldProtocolDownloadBaseModel {
 
+    /**
+     *
+     */
+    private String iccid;
+    /**
+     *
+     */
+    private String commandType;
+    /**
+     *
+     */
+    private String commandParameters;
 }

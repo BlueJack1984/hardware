@@ -15,5 +15,20 @@ import lombok.NoArgsConstructor;
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class OldProtocolDownloadUpdateLocalApnAndScaModel extends OldProtocolDownloadBaseModel {
-
+    /**
+     *
+     */
+    private String otaTradeNumber;
+    /**
+     *
+     */
+    private String apn;
+    /**
+     *
+     */
+    private String sca;
+    /**
+     *
+     */
+    private String plmn;
 }

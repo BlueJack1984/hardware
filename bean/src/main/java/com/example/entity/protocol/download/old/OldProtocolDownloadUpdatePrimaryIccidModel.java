@@ -15,5 +15,44 @@ import lombok.NoArgsConstructor;
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class OldProtocolDownloadUpdatePrimaryIccidModel extends OldProtocolDownloadBaseModel {
-
+    /**
+     *
+     */
+    private String otaTradeNumber;
+    /**
+     *
+     */
+    private String oldPrimaryIccid;
+    /**
+     *
+     */
+    private String newPrimaryIccid;
+    /**
+     *
+     */
+    private String imsi;
+    /**
+     *
+     */
+    private String algorithmFlag;
+    /**
+     *
+     */
+    private String dataKeyIndex;
+    /**
+     *
+     */
+    private String keyData;
+    /**
+     *
+     */
+    private String ussdPrefix;
+    /**
+     *
+     */
+    private String plmn;
+    /**
+     *
+     */
+    private String moreFlag;
 }
