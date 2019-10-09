@@ -4,8 +4,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
-
 /**
  * 上行消息的通用实体头部
  * @author lushusheng
@@ -15,6 +13,6 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class CommandParameter implements Serializable {
+public class OldProtocolCommandParameter extends CommandParameter{
 
 }

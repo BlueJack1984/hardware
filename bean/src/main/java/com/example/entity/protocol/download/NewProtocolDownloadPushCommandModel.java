@@ -1,5 +1,6 @@
 package com.example.entity.protocol.download;
 
+import com.example.entity.carry.NewProtocolCommandParameter;
 import com.example.entity.protocol.base.NewProtocolDownloadBaseModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -29,4 +30,8 @@ public class NewProtocolDownloadPushCommandModel extends NewProtocolDownloadBase
      * TLV结构
      */
     private List<String> commandParameterList;
+
+    private class NewProtocolDownloadPushCommandCommandParameter extends NewProtocolCommandParameter {
+
+    }
 }

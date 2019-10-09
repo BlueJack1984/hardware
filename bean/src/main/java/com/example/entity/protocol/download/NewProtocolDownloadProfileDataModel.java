@@ -1,5 +1,6 @@
 package com.example.entity.protocol.download;
 
+import com.example.entity.carry.NewProtocolCommandParameter;
 import com.example.entity.protocol.base.NewProtocolDownloadBaseModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -16,71 +17,9 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = false)
 public class NewProtocolDownloadProfileDataModel extends NewProtocolDownloadBaseModel {
     /**
-     *
-     */
-    private String otaTradeNumber;
-    /**
-     *
-     */
-    private String controlFlag;
-    /**
-     *
-     */
-    private String oldIccid;
-    /**
-     *
-     */
-    private String imsi;
-    /**
-     *
-     */
-    private String algorithmFlag;
-    /**
-     *
-     */
-    private String DataKeyIndex;
-    /**
-     *
-     */
-    private String keyData;
-    /**
-     * LV结构
-     */
-    private String expireTime;
-    /**
-     * LV结构
-     */
-    private String coverMcc;
-    /**
-     * LV结构
-     */
-    private String ussdPrefix;
-    /**
-     * LV结构
-     */
-    private String newIccid;
-    /**
-     * LV结构
-     */
-    private String apn;
-    /**
-     * LV结构
-     */
-    private String sca;
-    /**
-     * LV结构
-     */
-    private String telecomData;
-    /**
-     * LV结构
-     */
-    private String plmn;
-    /**
-     * LV结构
-     */
-    private String bipParameter;
-    /**
-     * LV结构
-     */
-    private String fplmn;
+     * command parameter属性
+      */
+    private class NewProtocolDownloadProfileDataCommandParameter extends NewProtocolCommandParameter {
+
+    }
 }
