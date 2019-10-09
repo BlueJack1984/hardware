@@ -27,7 +27,7 @@ public class CommandParameterContainer implements Serializable {
      */
     private String commandParameterLength;
     /**
-     *
+     * command parameter结构体数据
      */
-    private DownloadBaseModel commandParameter;
+    private DownloadBaseModel downloadBaseModel;
 }
