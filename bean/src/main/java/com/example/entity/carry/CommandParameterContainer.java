@@ -1,5 +1,6 @@
 package com.example.entity.carry;
 
+import com.example.entity.protocol.base.DownloadBaseModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -28,5 +29,5 @@ public class CommandParameterContainer implements Serializable {
     /**
      *
      */
-    private CommandParameter commandParameter;
+    private DownloadBaseModel commandParameter;
 }
