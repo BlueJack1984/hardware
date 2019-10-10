@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * @author lushusheng
  * @date 2019-10-10
- * @description
+ * @description 系统初始化准备数据
  */
 @Component
 @Order(1)
