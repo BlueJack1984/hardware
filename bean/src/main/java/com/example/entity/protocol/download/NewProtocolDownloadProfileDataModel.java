@@ -1,6 +1,6 @@
 package com.example.entity.protocol.download;
 
-import com.example.entity.carry.NewProtocolCommandParameter;
+import com.example.entity.protocol.carry.NewProtocolCommandParameter;
 import com.example.entity.protocol.base.NewProtocolDownloadBaseModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

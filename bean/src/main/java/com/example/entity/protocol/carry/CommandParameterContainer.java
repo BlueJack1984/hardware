@@ -1,6 +1,5 @@
-package com.example.entity.carry;
+package com.example.entity.protocol.carry;
 
-import com.example.entity.protocol.base.DownloadBaseModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;

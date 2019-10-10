@@ -1,7 +1,6 @@
 package com.example.entity.protocol.base;
 
-import com.example.entity.carry.CommandParameterContainer;
-import com.example.entity.protocol.base.DownloadBaseModel;
+import com.example.entity.protocol.carry.CommandParameterContainer;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
