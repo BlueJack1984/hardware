@@ -16,6 +16,20 @@ import java.io.Serializable;
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class DownloadBaseModel implements Serializable {
-
-    private String name;
+    /**
+     *
+     */
+    private String businessType;
+    /**
+     *
+     */
+    private String keyIndex;
+    /**
+     *
+     */
+    private String checkNumber;
+    /**
+     *
+     */
+    private String mac;
 }

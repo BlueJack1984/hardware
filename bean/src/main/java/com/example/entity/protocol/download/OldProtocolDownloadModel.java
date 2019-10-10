@@ -1,6 +1,7 @@
 package com.example.entity.protocol.download;
 
 import com.example.entity.protocol.base.DownloadBaseModel;
+import com.example.entity.protocol.carry.base.CommandParameterContainer;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -16,4 +17,8 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = false)
 public class OldProtocolDownloadModel extends DownloadBaseModel {
 
+    /**
+     *
+     */
+    private CommandParameterContainer commandParameterContainer;
 }

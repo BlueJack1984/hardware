@@ -34,24 +34,9 @@ public class NewProtocolDownloadModel extends DownloadBaseModel {
      *
      */
     private String userDataLength;
-    /**
-     *
-     */
-    private String businessType;
-    /**
-     *
-     */
-    private String keyIndex;
-    /**
-     *
-     */
-    private String checkNumber;
+
     /**
      *
      */
     private List<CommandParameterContainer> commandParameterContainerList;
-    /**
-     *
-     */
-    private String mac;
 }
