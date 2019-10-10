@@ -22,10 +22,6 @@ public class NewProtocolUploadReceiveDataPorModel extends NewProtocolUploadBaseM
     /**
      *
      */
-    private String imei;
-    /**
-     *
-     */
     private String batchNumber;
     /**
      *

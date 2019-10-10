@@ -35,10 +35,6 @@ public class NewProtocolUploadPositionModel extends NewProtocolUploadBaseModel {
     /**
      *
      */
-    private String imei;
-    /**
-     *
-     */
     private String imsi;
     /**
      * bip时存在

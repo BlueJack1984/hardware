@@ -1,4 +1,4 @@
-package com.example.constant.protocol;
+package com.example.constant.protocol.command;
 
 import lombok.Data;
 

@@ -1,7 +1,7 @@
 package com.example.pack.service.impl;
 
-import com.example.constant.protocol.NewProtocolCommandTypeConstant;
-import com.example.constant.protocol.NewProtocolParameterPositionConstant;
+import com.example.constant.protocol.command.NewProtocolCommandTypeConstant;
+import com.example.constant.protocol.decode.NewProtocolPositionConstant;
 import com.example.entity.pack.NewProtocolPackSubject;
 import com.example.entity.pack.NewProtocolUnpackSubject;
 import com.example.entity.protocol.base.DownloadBaseModel;
@@ -45,8 +45,8 @@ public class NewProtocolPackServiceImpl implements INewProtocolPackService {
 
     public UploadBaseModel changeMessageToModel(String message) {
 
-        String commandType = message.substring(NewProtocolParameterPositionConstant.COMMAND_TYPE_INDEX_START,
-                NewProtocolParameterPositionConstant.COMMAND_TYPE_INDEX_END);
+        String commandType = message.substring(NewProtocolPositionConstant.COMMAND_TYPE_INDEX_START,
+                NewProtocolPositionConstant.COMMAND_TYPE_INDEX_END);
         UploadBaseModel uploadBaseModel = null;
         if(NewProtocolCommandTypeConstant.POSITION_UPDATE_TYPE.equals(commandType)) {
             //新协议位置上报
@@ -69,30 +69,33 @@ public class NewProtocolPackServiceImpl implements INewProtocolPackService {
     }
 
     public UploadBaseModel changeMessageToPositionModel(String message) {
-        //获取body
+        //这里转换为位置上报实体
         NewProtocolUploadPositionModel positionModel = new NewProtocolUploadPositionModel();
         //获取公共属性
         commonPackService.obtainSharedProperties(positionModel, message);
         //获取特有属性
-
+        obtainPositionModelUniqueProperties(positionModel, message);
         return positionModel;
     }
 
     public UploadBaseModel changeMessageToPorModel(String message) {
-        //获取body属性
+        //这里转换为POR实体
         NewProtocolUploadPorModel porModel = new NewProtocolUploadPorModel();
         //获取公共属性
         commonPackService.obtainSharedProperties(porModel, message);
         //获取特有属性
+        obtainPorModelUniqueProperties(porModel, message);
         return porModel;
     }
 
     public UploadBaseModel changeMessageToReceiveDataPorModel(String message) {
-        //获取body属性
+        //这里转换为Receive data por实体
         NewProtocolUploadReceiveDataPorModel receiveDataPorModel = new NewProtocolUploadReceiveDataPorModel();
         //获取公共属性
         commonPackService.obtainSharedProperties(receiveDataPorModel, message);
         //获取特有属性
+        String iccid = message.substring(NewProtocolPositionConstant.)
+        //obtainReceiveDataPorModelUniqueProperties(receiveDataPorModel, message);
         return receiveDataPorModel;
     }
 

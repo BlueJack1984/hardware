@@ -2,7 +2,7 @@ package com.example.business.bip.impl;
 
 import com.example.business.bip.ICommonBipService;
 import com.example.business.bip.IOldProtocolBipService;
-import com.example.constant.protocol.OldProtocolCommandTypeConstant;
+import com.example.constant.protocol.command.OldProtocolCommandTypeConstant;
 import com.example.entity.protocol.base.DownloadBaseModel;
 import com.example.entity.protocol.base.UploadBaseModel;
 import com.example.entity.protocol.carry.old.OldProtocolDownloadLocalDataCommandParameter;

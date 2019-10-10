@@ -2,7 +2,7 @@ package com.example.business.bip.impl;
 
 import com.example.business.bip.ICommonBipService;
 import com.example.business.bip.INewProtocolBipService;
-import com.example.constant.protocol.NewProtocolCommandTypeConstant;
+import com.example.constant.protocol.command.NewProtocolCommandTypeConstant;
 import com.example.core.service.IDeviceInitRecService;
 import com.example.entity.protocol.base.DownloadBaseModel;
 import com.example.entity.protocol.base.UploadBaseModel;

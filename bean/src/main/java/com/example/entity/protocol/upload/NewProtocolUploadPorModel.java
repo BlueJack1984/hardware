@@ -20,8 +20,4 @@ public class NewProtocolUploadPorModel extends NewProtocolUploadBaseModel {
      *
      */
     private String otaTradeNumber;
-    /**
-     *
-     */
-    private String imei;
 }

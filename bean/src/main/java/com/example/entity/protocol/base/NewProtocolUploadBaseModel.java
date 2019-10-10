@@ -14,4 +14,8 @@ import lombok.NoArgsConstructor;
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class NewProtocolUploadBaseModel extends UploadBaseModel{
+    /**
+     *
+     */
+    private String imei;
 }

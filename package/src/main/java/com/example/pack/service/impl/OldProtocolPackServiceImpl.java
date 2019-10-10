@@ -1,13 +1,12 @@
 package com.example.pack.service.impl;
 
-import com.example.constant.protocol.OldProtocolCommandTypeConstant;
-import com.example.constant.protocol.OldProtocolParameterPositionConstant;
+import com.example.constant.protocol.command.OldProtocolCommandTypeConstant;
+import com.example.constant.protocol.decode.OldProtocolPositionConstant;
 import com.example.entity.pack.OldProtocolPackSubject;
 import com.example.entity.pack.OldProtocolUnpackSubject;
 import com.example.entity.protocol.base.DownloadBaseModel;
 import com.example.entity.protocol.base.UploadBaseModel;
 import com.example.entity.protocol.carry.base.CommandParameterContainer;
-import com.example.entity.protocol.carry.old.OldProtocolDownloadLocalDataCommandParameter;
 import com.example.entity.protocol.download.OldProtocolDownloadModel;
 import com.example.entity.protocol.upload.old.OldProtocolUploadPorModel;
 import com.example.entity.protocol.upload.old.OldProtocolUploadPositionModel;
@@ -36,8 +35,8 @@ public class OldProtocolPackServiceImpl implements IOldProtocolPackService {
 
     public UploadBaseModel changeMessageToModel(String message) {
 
-        String commandType = message.substring(OldProtocolParameterPositionConstant.COMMAND_TYPE_INDEX_START,
-                OldProtocolParameterPositionConstant.COMMAND_TYPE_INDEX_END);
+        String commandType = message.substring(OldProtocolPositionConstant.COMMAND_TYPE_INDEX_START,
+                OldProtocolPositionConstant.COMMAND_TYPE_INDEX_END);
         UploadBaseModel uploadBaseModel = null;
         if(OldProtocolCommandTypeConstant.POSITION_UPDATE_TYPE.equals(commandType)) {
             //旧协议位置上报
