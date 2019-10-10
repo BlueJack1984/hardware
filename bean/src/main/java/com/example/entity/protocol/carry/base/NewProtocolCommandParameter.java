@@ -14,4 +14,12 @@ import lombok.NoArgsConstructor;
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class NewProtocolCommandParameter extends CommandParameter{
+    /**
+     *
+     */
+    private String otaTradeNumber;
+    /**
+     *
+     */
+    private String controlFlag;
 }

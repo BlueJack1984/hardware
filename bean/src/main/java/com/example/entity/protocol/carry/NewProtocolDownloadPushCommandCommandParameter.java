@@ -20,11 +20,7 @@ public class NewProtocolDownloadPushCommandCommandParameter extends NewProtocolC
     /**
      *
      */
-    private String otaTradeNumber;
-    /**
-     *
-     */
-    private String controlFlag;
+    private String iccid;
     /**
      * TLV结构
      */
