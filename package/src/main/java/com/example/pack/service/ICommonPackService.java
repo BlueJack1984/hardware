@@ -14,6 +14,11 @@ public interface ICommonPackService {
      */
     String handleMessageReadable(String message);
 
+    /**
+     *
+     * @param uploadBaseModel
+     * @param message
+     */
     void obtainSharedProperties(UploadBaseModel uploadBaseModel, String message);
 
 }

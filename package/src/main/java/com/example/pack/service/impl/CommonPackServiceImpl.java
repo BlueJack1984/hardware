@@ -2,6 +2,7 @@ package com.example.pack.service.impl;
 
 import com.example.constant.protocol.decode.NewProtocolPositionIndexConstant;
 import com.example.constant.protocol.UploadDecodeConstant;
+import com.example.constant.protocol.decode.ProtocolIndexConstant;
 import com.example.entity.protocol.base.UploadBaseModel;
 import com.example.pack.service.ICommonPackService;
 import com.example.util.protocol.ProtocolUtil;
@@ -32,27 +33,27 @@ public class CommonPackServiceImpl implements ICommonPackService {
     @Override
     public void obtainSharedProperties(UploadBaseModel uploadBaseModel, String message) {
 
-        //共同属性，位置相同，任意选择一个位置索引即可，本代码中使用新协议
-        String prefix = message.substring(NewProtocolPositionIndexConstant.USSD_PREFIX_INDEX_START,
-                NewProtocolPositionIndexConstant.USSD_PREFIX_INDEX_END);
+        //共同属性，位置相同，选择通用位置索引即可
+        String prefix = message.substring(ProtocolIndexConstant.USSD_PREFIX_INDEX_START,
+                ProtocolIndexConstant.USSD_PREFIX_INDEX_END);
         uploadBaseModel.setPrefix(prefix);
-        String protocolVersion = message.substring(NewProtocolPositionIndexConstant.PROTOCOL_VERSION_INDEX_START,
-                NewProtocolPositionIndexConstant.PROTOCOL_VERSION_INDEX_END);
+        String protocolVersion = message.substring(ProtocolIndexConstant.PROTOCOL_VERSION_INDEX_START,
+                ProtocolIndexConstant.PROTOCOL_VERSION_INDEX_END);
         uploadBaseModel.setProtocolVersion(protocolVersion);
-        String businessType = message.substring(NewProtocolPositionIndexConstant.BUSINESS_TYPE_INDEX_START,
-                NewProtocolPositionIndexConstant.BUSINESS_TYPE_INDEX_END);
+        String businessType = message.substring(ProtocolIndexConstant.BUSINESS_TYPE_INDEX_START,
+                ProtocolIndexConstant.BUSINESS_TYPE_INDEX_END);
         uploadBaseModel.setBusinessType(businessType);
-        String keyIndex = message.substring(NewProtocolPositionIndexConstant.KEY_INDEX_INDEX_START,
-                NewProtocolPositionIndexConstant.KEY_INDEX_INDEX_END);
+        String keyIndex = message.substring(ProtocolIndexConstant.KEY_INDEX_INDEX_START,
+                ProtocolIndexConstant.KEY_INDEX_INDEX_END);
         uploadBaseModel.setKeyIndex(keyIndex);
-        String manufacturerFlag = message.substring(NewProtocolPositionIndexConstant.MANUFACTURER_FLAG_INDEX_START,
-                NewProtocolPositionIndexConstant.MANUFACTURER_FLAG_INDEX_END);
+        String manufacturerFlag = message.substring(ProtocolIndexConstant.MANUFACTURER_FLAG_INDEX_START,
+                ProtocolIndexConstant.MANUFACTURER_FLAG_INDEX_END);
         uploadBaseModel.setManufacturerFlag(manufacturerFlag);
-        String appletVersion = message.substring(NewProtocolPositionIndexConstant.APPLET_VERSION_INDEX_START,
-                NewProtocolPositionIndexConstant.APPLET_VERSION_INDEX_END);
+        String appletVersion = message.substring(ProtocolIndexConstant.APPLET_VERSION_INDEX_START,
+                ProtocolIndexConstant.APPLET_VERSION_INDEX_END);
         uploadBaseModel.setAppletVersion(appletVersion);
-        String commandType = message.substring(NewProtocolPositionIndexConstant.COMMAND_TYPE_INDEX_START,
-                NewProtocolPositionIndexConstant.COMMAND_TYPE_INDEX_END);
+        String commandType = message.substring(ProtocolIndexConstant.COMMAND_TYPE_INDEX_START,
+                ProtocolIndexConstant.COMMAND_TYPE_INDEX_END);
         uploadBaseModel.setCommandType(commandType);
         //获取suffix，与其他属性不同
         Integer suffixStartIndex = message.length() - 1;

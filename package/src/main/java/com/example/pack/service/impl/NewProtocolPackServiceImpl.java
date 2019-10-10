@@ -80,6 +80,11 @@ public class NewProtocolPackServiceImpl implements INewProtocolPackService {
         return positionModel;
     }
 
+    private void obtainPositionModelUniqueProperties(NewProtocolUploadPositionModel positionModel, String message) {
+        log.info("进入位置上报解码特有属性模块！");
+        String[] keys =
+    }
+
     public UploadBaseModel changeMessageToPorModel(String message) {
         //这里转换为POR实体
         NewProtocolUploadPorModel porModel = new NewProtocolUploadPorModel();
