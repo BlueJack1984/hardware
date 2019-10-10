@@ -1,7 +1,9 @@
 package com.example.pack.service.impl;
 
 import com.example.constant.protocol.command.NewProtocolCommandTypeConstant;
+import com.example.constant.protocol.decode.NewProtocolPorIndexConstant;
 import com.example.constant.protocol.decode.NewProtocolPositionIndexConstant;
+import com.example.constant.protocol.decode.NewProtocolReceiveDataPorIndexConstant;
 import com.example.entity.pack.NewProtocolPackSubject;
 import com.example.entity.pack.NewProtocolUnpackSubject;
 import com.example.entity.protocol.base.DownloadBaseModel;
@@ -84,7 +86,13 @@ public class NewProtocolPackServiceImpl implements INewProtocolPackService {
         //获取公共属性
         commonPackService.obtainSharedProperties(porModel, message);
         //获取特有属性
-        obtainPorModelUniqueProperties(porModel, message);
+        String otaTradeNumber = message.substring(NewProtocolPorIndexConstant.OTA_TRADE_NUMBER_INDEX_START,
+                NewProtocolPorIndexConstant.OTA_TRADE_NUMBER_INDEX_END);
+        porModel.setOtaTradeNumber(otaTradeNumber);
+        String imei = message.substring(NewProtocolPorIndexConstant.IMEI_INDEX_START,
+                NewProtocolPorIndexConstant.IMEI_INDEX_END);
+        porModel.setImei(imei);
+        //obtainPorModelUniqueProperties(porModel, message);
         return porModel;
     }
 
@@ -94,7 +102,18 @@ public class NewProtocolPackServiceImpl implements INewProtocolPackService {
         //获取公共属性
         commonPackService.obtainSharedProperties(receiveDataPorModel, message);
         //获取特有属性
-        String iccid = message.substring(NewProtocolPositionIndexConstant.)
+        String iccid = message.substring(NewProtocolReceiveDataPorIndexConstant.ICCID_INDEX_START,
+                NewProtocolReceiveDataPorIndexConstant.ICCID_INDEX_END);
+        receiveDataPorModel.setIccid(iccid);
+        String imei = message.substring(NewProtocolReceiveDataPorIndexConstant.IMEI_INDEX_START,
+                NewProtocolReceiveDataPorIndexConstant.IMEI_INDEX_END);
+        receiveDataPorModel.setImei(imei);
+        String batchNumber = message.substring(NewProtocolReceiveDataPorIndexConstant.BATCH_NUMBER_INDEX_START,
+                NewProtocolReceiveDataPorIndexConstant.BATCH_NUMBER_INDEX_END);
+        receiveDataPorModel.setBatchNumber(batchNumber);
+        String requestMessageBitMap = message.substring(NewProtocolReceiveDataPorIndexConstant.REQUEST_MESSAGE_BIT_MAP_INDEX_START,
+                NewProtocolReceiveDataPorIndexConstant.REQUEST_MESSAGE_BIT_MAP_INDEX_END);
+        receiveDataPorModel.setRequestMessageBitMap(requestMessageBitMap);
         //obtainReceiveDataPorModelUniqueProperties(receiveDataPorModel, message);
         return receiveDataPorModel;
     }

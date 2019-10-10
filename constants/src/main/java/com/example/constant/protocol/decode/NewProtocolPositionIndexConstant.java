@@ -37,6 +37,11 @@ public class NewProtocolPositionIndexConstant extends NewProtocolIndexConstant {
     /**
      *
      */
+    public static final Integer IMEI_INDEX_START = 15;
+    public static final Integer IMEI_INDEX_END = 16;
+    /**
+     *
+     */
     public static final Integer IMSI_INDEX_START = 15;
     public static final Integer IMSI_INDEX_END = 16;
     /**

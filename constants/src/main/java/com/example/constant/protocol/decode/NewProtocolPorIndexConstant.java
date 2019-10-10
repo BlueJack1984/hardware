@@ -19,4 +19,9 @@ public class NewProtocolPorIndexConstant extends NewProtocolIndexConstant {
      */
     public static final Integer OTA_TRADE_NUMBER_INDEX_START = 15;
     public static final Integer OTA_TRADE_NUMBER_INDEX_END = 16;
+    /**
+     *
+     */
+    public static final Integer IMEI_INDEX_START = 15;
+    public static final Integer IMEI_INDEX_END = 16;
 }
