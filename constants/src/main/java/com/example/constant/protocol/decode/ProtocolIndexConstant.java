@@ -1,9 +1,24 @@
 package com.example.constant.protocol.decode;
 
-public class ProtocolIndexConstant {
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
+
+/**
+ * 上行消息的通用实体头部
+ * @author lushusheng
+ * @date 2019-09-19
+ * @description
+ */
+@NoArgsConstructor
+@Data
+@EqualsAndHashCode(callSuper = false)
+public class ProtocolIndexConstant implements Serializable {
 
     /**
-     * 新协议前缀部分
+     * 协议前缀部分
      */
     public static final Integer USSD_PREFIX_INDEX_START = 0;
     public static final Integer USSD_PREFIX_INDEX_END = 7;
