@@ -1,6 +1,6 @@
 package com.example.constant.protocol.decode;
 
-public class NewProtocolConstant {
+public class ProtocolIndexConstant {
 
     /**
      * 新协议前缀部分

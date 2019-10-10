@@ -1,7 +1,7 @@
 package com.example.pack.service.impl;
 
 import com.example.constant.protocol.command.OldProtocolCommandTypeConstant;
-import com.example.constant.protocol.decode.OldProtocolPositionConstant;
+import com.example.constant.protocol.decode.OldProtocolPositionIndexConstant;
 import com.example.entity.pack.OldProtocolPackSubject;
 import com.example.entity.pack.OldProtocolUnpackSubject;
 import com.example.entity.protocol.base.DownloadBaseModel;
@@ -35,8 +35,8 @@ public class OldProtocolPackServiceImpl implements IOldProtocolPackService {
 
     public UploadBaseModel changeMessageToModel(String message) {
 
-        String commandType = message.substring(OldProtocolPositionConstant.COMMAND_TYPE_INDEX_START,
-                OldProtocolPositionConstant.COMMAND_TYPE_INDEX_END);
+        String commandType = message.substring(OldProtocolPositionIndexConstant.COMMAND_TYPE_INDEX_START,
+                OldProtocolPositionIndexConstant.COMMAND_TYPE_INDEX_END);
         UploadBaseModel uploadBaseModel = null;
         if(OldProtocolCommandTypeConstant.POSITION_UPDATE_TYPE.equals(commandType)) {
             //旧协议位置上报

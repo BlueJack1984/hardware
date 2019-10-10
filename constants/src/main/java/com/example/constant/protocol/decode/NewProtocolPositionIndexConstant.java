@@ -6,7 +6,7 @@ package com.example.constant.protocol.decode;
  * @date 2019-09-18
  * @description 协议常数
  */
-public class NewProtocolPositionConstant extends NewProtocolConstant{
+public class NewProtocolPositionIndexConstant extends NewProtocolIndexConstant {
 
 
 }

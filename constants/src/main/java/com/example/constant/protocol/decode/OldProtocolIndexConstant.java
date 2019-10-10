@@ -1,6 +1,6 @@
 package com.example.constant.protocol.decode;
 
-public class OldProtocolConstant {
+public class OldProtocolIndexConstant extends ProtocolIndexConstant{
     /**
      * 旧协议前缀部分
      */
