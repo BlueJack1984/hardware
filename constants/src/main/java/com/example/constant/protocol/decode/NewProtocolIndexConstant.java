@@ -15,5 +15,9 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = false)
 public class NewProtocolIndexConstant extends ProtocolIndexConstant{
 
-
+    /**
+     *
+     */
+    public static final Integer IMEI_INDEX_START = 15;
+    public static final Integer IMEI_INDEX_END = 16;
 }

@@ -14,4 +14,9 @@ import lombok.NoArgsConstructor;
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class NewProtocolPorIndexConstant extends NewProtocolIndexConstant {
+    /**
+     *
+     */
+    public static final Integer OTA_TRADE_NUMBER_INDEX_START = 15;
+    public static final Integer OTA_TRADE_NUMBER_INDEX_END = 16;
 }

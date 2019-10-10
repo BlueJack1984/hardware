@@ -14,4 +14,19 @@ import lombok.NoArgsConstructor;
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class NewProtocolReceiveDataPorIndexConstant extends NewProtocolIndexConstant {
+    /**
+     *
+     */
+    public static final Integer ICCID_INDEX_START = 15;
+    public static final Integer ICCID_INDEX_END = 16;
+    /**
+     *
+     */
+    public static final Integer BATCH_NUMBER_INDEX_START = 15;
+    public static final Integer BATCH_NUMBER_INDEX_END = 16;
+    /**
+     *
+     */
+    public static final Integer REQUEST_MESSAGE_BIT_MAP_INDEX_START = 15;
+    public static final Integer REQUEST_MESSAGE_BIT_MAP_INDEX_END = 16;
 }

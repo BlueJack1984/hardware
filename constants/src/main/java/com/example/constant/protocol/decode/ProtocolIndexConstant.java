@@ -52,4 +52,9 @@ public class ProtocolIndexConstant implements Serializable {
      */
     public static final Integer COMMAND_TYPE_INDEX_START = 16;
     public static final Integer COMMAND_TYPE_INDEX_END = 17;
+    /**
+     * 这个没有用，写在这里纯属为了装饰，具体的值需要根据字符串长度截取
+     */
+    public static final Integer USSD_SUFFIX_INDEX_START = 15;
+    public static final Integer USSD_SUFFIX_INDEX_END = 16;
 }
