@@ -6,6 +6,8 @@ import com.example.entity.pack.NewProtocolPackSubject;
 import com.example.entity.pack.NewProtocolUnpackSubject;
 import com.example.entity.protocol.base.DownloadBaseModel;
 import com.example.entity.protocol.base.UploadBaseModel;
+import com.example.entity.protocol.carry.base.CommandParameterContainer;
+import com.example.entity.protocol.download.NewProtocolDownloadModel;
 import com.example.entity.protocol.upload.NewProtocolUploadPorModel;
 import com.example.entity.protocol.upload.NewProtocolUploadPositionModel;
 import com.example.entity.protocol.upload.NewProtocolUploadReceiveDataPorModel;
@@ -15,6 +17,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * 新协议的打包功能
@@ -94,8 +98,22 @@ public class NewProtocolPackServiceImpl implements INewProtocolPackService {
 
     @Override
     public String pack(DownloadBaseModel downloadBaseModel) {
+
+        StringBuffer downMessage = new StringBuffer("");
+        NewProtocolDownloadModel model = (NewProtocolDownloadModel)downloadBaseModel;
         //这里判断命令类型
-        return null;
+        String batchNumber;
+        String messageTotalNumber;
+        String currentMessageIndex;
+        String userDataLength;
+        String businessType;
+        String keyIndex;
+        String checkNumber;
+        String mac;
+        //处理数据队列
+        List<CommandParameterContainer> commandParameterContainerList = model.getCommandParameterContainerList();
+
+        return downMessage.toString();
     }
 
     @Override

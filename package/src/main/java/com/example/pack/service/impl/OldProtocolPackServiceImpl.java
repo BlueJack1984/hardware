@@ -6,7 +6,9 @@ import com.example.entity.pack.OldProtocolPackSubject;
 import com.example.entity.pack.OldProtocolUnpackSubject;
 import com.example.entity.protocol.base.DownloadBaseModel;
 import com.example.entity.protocol.base.UploadBaseModel;
+import com.example.entity.protocol.carry.base.CommandParameterContainer;
 import com.example.entity.protocol.carry.old.OldProtocolDownloadLocalDataCommandParameter;
+import com.example.entity.protocol.download.OldProtocolDownloadModel;
 import com.example.entity.protocol.upload.old.OldProtocolUploadPorModel;
 import com.example.entity.protocol.upload.old.OldProtocolUploadPositionModel;
 import com.example.pack.service.ICommonPackService;
@@ -50,15 +52,6 @@ public class OldProtocolPackServiceImpl implements IOldProtocolPackService {
             //POR上报
             log.info("进入旧协议POR上报模块！");
             uploadBaseModel = changeMessageToPorModel(message);
-        }else if(OldProtocolCommandTypeConstant.PUSH_COMMAND_TYPE.equals(commandType)) {
-            log.info("进入旧协议push command处理模块！");
-            uploadBaseModel = changeMessageToPushCommandModel(message);
-        }else if(OldProtocolCommandTypeConstant.PUSH_COMMAND_NEW_TYPE.equals(commandType)) {
-            log.info("进入旧协议push command new处理模块！");
-            uploadBaseModel = changeMessageToPushCommandNewModel(message);
-        }else if(OldProtocolCommandTypeConstant.DOWNLOAD_GLOBAL_TELECOM_DATA_TYPE.equals(commandType)) {
-            log.info("进入旧协议download global telecom data模块！");
-            uploadBaseModel = changeMessageToDownloadGlobalTelecomDataModel(message);
         }else {
             log.info("根据指令类型参数commandType无法解析出上行实体！commandType为：" + commandType);
         }
@@ -94,38 +87,20 @@ public class OldProtocolPackServiceImpl implements IOldProtocolPackService {
         //获取body
         return porModel;
     }
-    public UploadBaseModel changeMessageToPushCommandModel(String message) {
-        log.info("进入旧协议字符串数据转换为位置上报实体函数！");
-        OldProtocolUploadPushCommandModel pushCommandModel = new OldProtocolUploadPushCommandModel();
-        //OldProtocol uploadModel = new BaseModel();
-        //获取header属性内容
-        //OldProtocolUploadHeader header = getHeader(message);
-        //uploadModel.setHeader(header);
-        return pushCommandModel;
-    }
-    public UploadBaseModel changeMessageToPushCommandNewModel(String message) {
-        log.info("进入旧协议字符串数据转换为位置上报实体函数！");
-        OldProtocolUploadPushCommandNewModel pushCommandNewModel = new OldProtocolUploadPushCommandNewModel();
-        //获取header属性内容
-        //OldProtocolUploadHeader header = getHeader(message);
-        //uploadModel.setHeader(header);
-        return pushCommandNewModel;
-    }
-    public UploadBaseModel changeMessageToDownloadGlobalTelecomDataModel(String message) {
-        log.info("进入旧协议字符串数据转换为位置上报实体函数！");
-        OldProtocolUploadGlobalTelecomDataModel globalTelecomDataModel = new OldProtocolUploadGlobalTelecomDataModel();
-        //获取header属性内容
-        //OldProtocolUploadHeader header = getHeader(message);
-        //uploadModel.setHeader(header);
-        return globalTelecomDataModel;
-    }
 
     @Override
     public String pack(DownloadBaseModel downloadBaseModel) {
-        //类型转换
-        OldProtocolDownloadLocalDataCommandParameter oldProtocolDownloadModel = (OldProtocolDownloadLocalDataCommandParameter)downloadBaseModel;
 
-        return null;
+        StringBuffer downMessage = new StringBuffer("");
+        OldProtocolDownloadModel model= (OldProtocolDownloadModel)downloadBaseModel;
+        String businessType;
+        String keyIndex;
+        String checkNumber;
+        String mac;
+        //类型转换
+        CommandParameterContainer commandParameterContainer = model.getCommandParameterContainer();
+
+        return downMessage.toString();
     }
 
     @Override
