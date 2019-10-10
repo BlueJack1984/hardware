@@ -112,10 +112,13 @@ public class NewProtocolPackServiceImpl implements INewProtocolPackService {
         String mac;
         //处理数据队列
         List<CommandParameterContainer> commandParameterContainerList = model.getCommandParameterContainerList();
-
+        handleTailAnd(commandParameterContainerList);
         return downMessage.toString();
     }
 
+    private void handleTailAnd(List<CommandParameterContainer> commandParameterContainerList) {
+
+    }
     @Override
     public NewProtocolUnpackSubject unpackService(String message) {
 
