@@ -24,15 +24,15 @@ public class OtaCommunicationKeysContainer implements ApplicationRunner {
     /**
      * 多组通信密钥，配置成一个map
      */
-    public static Map<String, String[]> OTA_COMM_KEY_MAP = new HashMap<>();
+    //public static Map<String, String[]> OTA_COMM_KEY_MAP = new HashMap<>();
     /**
      * 多组通信密钥，配置成一个map
      */
-    public static Map<String, String[]> OTA_COMM_KEY_MAP = new HashMap<>();
+    //public static Map<String, String[]> OTA_COMM_KEY_MAP = new HashMap<>();
     /**
      * 多组通信密钥，配置成一个map
      */
-    public static Map<String, String[]> OTA_COMM_KEY_MAP = new HashMap<>();
+    //public static Map<String, String[]> OTA_COMM_KEY_MAP = new HashMap<>();
 
 
     @Override
