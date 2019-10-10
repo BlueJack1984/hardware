@@ -1,4 +1,4 @@
-package com.example.entity.protocol.carry;
+package com.example.entity.protocol.carry.base;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

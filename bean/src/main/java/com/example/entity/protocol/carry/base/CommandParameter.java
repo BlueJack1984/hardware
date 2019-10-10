@@ -1,9 +1,10 @@
-package com.example.entity.protocol.download;
+package com.example.entity.protocol.carry.base;
 
-import com.example.entity.protocol.base.DownloadBaseModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
 
 /**
  * 上行消息的通用实体头部
@@ -14,6 +15,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class OldProtocolDownloadModel extends DownloadBaseModel {
+public class CommandParameter implements Serializable {
 
 }

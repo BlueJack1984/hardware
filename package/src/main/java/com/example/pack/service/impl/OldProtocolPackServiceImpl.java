@@ -6,8 +6,7 @@ import com.example.entity.pack.OldProtocolPackSubject;
 import com.example.entity.pack.OldProtocolUnpackSubject;
 import com.example.entity.protocol.base.DownloadBaseModel;
 import com.example.entity.protocol.base.UploadBaseModel;
-import com.example.entity.protocol.download.old.OldProtocolDownloadLocalDataModel;
-import com.example.entity.protocol.upload.*;
+import com.example.entity.protocol.carry.old.OldProtocolDownloadLocalDataCommandParameter;
 import com.example.entity.protocol.upload.old.OldProtocolUploadPorModel;
 import com.example.entity.protocol.upload.old.OldProtocolUploadPositionModel;
 import com.example.pack.service.ICommonPackService;
@@ -124,7 +123,7 @@ public class OldProtocolPackServiceImpl implements IOldProtocolPackService {
     @Override
     public String pack(DownloadBaseModel downloadBaseModel) {
         //类型转换
-        OldProtocolDownloadLocalDataModel oldProtocolDownloadModel = (OldProtocolDownloadLocalDataModel)downloadBaseModel;
+        OldProtocolDownloadLocalDataCommandParameter oldProtocolDownloadModel = (OldProtocolDownloadLocalDataCommandParameter)downloadBaseModel;
 
         return null;
     }

@@ -5,8 +5,7 @@ import com.example.business.bip.IOldProtocolBipService;
 import com.example.constant.protocol.OldProtocolCommandTypeConstant;
 import com.example.entity.protocol.base.DownloadBaseModel;
 import com.example.entity.protocol.base.UploadBaseModel;
-import com.example.entity.protocol.download.old.OldProtocolDownloadLocalDataModel;
-import com.example.entity.protocol.upload.*;
+import com.example.entity.protocol.carry.old.OldProtocolDownloadLocalDataCommandParameter;
 import com.example.entity.protocol.upload.old.OldProtocolUploadPorModel;
 import com.example.entity.protocol.upload.old.OldProtocolUploadPositionModel;
 import lombok.RequiredArgsConstructor;
@@ -63,7 +62,7 @@ public class OldProtocolBipServiceImpl implements IOldProtocolBipService {
 
     public DownloadBaseModel handlePositionUpdateBusiness(OldProtocolUploadPositionModel positionModel) {
 
-        OldProtocolDownloadLocalDataModel oldProtocolDownloadModel = new OldProtocolDownloadLocalDataModel();
+        OldProtocolDownloadLocalDataCommandParameter oldProtocolDownloadModel = new OldProtocolDownloadLocalDataCommandParameter();
 
         return oldProtocolDownloadModel;
     }
@@ -71,15 +70,15 @@ public class OldProtocolBipServiceImpl implements IOldProtocolBipService {
 
     }
     public DownloadBaseModel handlePushCommandBusiness(OldProtocolUploadPushCommandModel pushCommandModel) {
-        OldProtocolDownloadLocalDataModel oldProtocolDownloadModel = new OldProtocolDownloadLocalDataModel();
+        OldProtocolDownloadLocalDataCommandParameter oldProtocolDownloadModel = new OldProtocolDownloadLocalDataCommandParameter();
         return oldProtocolDownloadModel;
     }
     public DownloadBaseModel handlePushCommandNewBusiness(OldProtocolUploadPushCommandNewModel pushCommandNewModel) {
-        OldProtocolDownloadLocalDataModel oldProtocolDownloadModel = new OldProtocolDownloadLocalDataModel();
+        OldProtocolDownloadLocalDataCommandParameter oldProtocolDownloadModel = new OldProtocolDownloadLocalDataCommandParameter();
         return oldProtocolDownloadModel;
     }
     public DownloadBaseModel handleDownloadGlobalTelecomDataBusiness(OldProtocolUploadGlobalTelecomDataModel globalTelecomDataModel) {
-        OldProtocolDownloadLocalDataModel oldProtocolDownloadModel = new OldProtocolDownloadLocalDataModel();
+        OldProtocolDownloadLocalDataCommandParameter oldProtocolDownloadModel = new OldProtocolDownloadLocalDataCommandParameter();
         return oldProtocolDownloadModel;
     }
 

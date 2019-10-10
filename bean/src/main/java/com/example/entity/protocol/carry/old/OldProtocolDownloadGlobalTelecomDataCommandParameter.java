@@ -1,6 +1,6 @@
-package com.example.entity.protocol.download.old;
+package com.example.entity.protocol.carry.old;
 
-import com.example.entity.protocol.base.OldProtocolDownloadBaseModel;
+import com.example.entity.protocol.carry.base.OldProtocolCommandParameter;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -14,19 +14,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class OldProtocolDownloadTelecomDataModel extends OldProtocolDownloadBaseModel {
+public class OldProtocolDownloadGlobalTelecomDataCommandParameter extends OldProtocolCommandParameter {
     /**
      *
      */
     private String otaTradeNumber;
-    /**
-     * LV结构
-     */
-    private String apn;
-    /**
-     * LV结构
-     */
-    private String sca;
     /**
      *
      */
@@ -40,11 +32,15 @@ public class OldProtocolDownloadTelecomDataModel extends OldProtocolDownloadBase
      */
     private String uimidEsn;
     /**
-     *
+     * LV结构
      */
     private String hrpdSs;
     /**
-     *
+     * LV结构
      */
     private String hrpdUpp;
+    /**
+     *
+     */
+    private String pushCommand;
 }

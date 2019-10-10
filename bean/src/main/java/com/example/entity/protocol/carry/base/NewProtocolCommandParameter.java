@@ -1,4 +1,4 @@
-package com.example.entity.protocol.base;
+package com.example.entity.protocol.carry.base;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -13,7 +13,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class OldProtocolDownloadBaseModel extends DownloadBaseModel{
-
-
+public class NewProtocolCommandParameter extends CommandParameter{
 }

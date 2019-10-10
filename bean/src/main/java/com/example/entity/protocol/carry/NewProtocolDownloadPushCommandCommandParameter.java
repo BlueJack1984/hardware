@@ -1,10 +1,11 @@
 package com.example.entity.protocol.carry;
 
+import com.example.entity.protocol.carry.base.NewProtocolCommandParameter;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
+import java.util.List;
 
 /**
  * 上行消息的通用实体头部
@@ -15,18 +16,17 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class CommandParameterContainer implements Serializable {
-
+public class NewProtocolDownloadPushCommandCommandParameter extends NewProtocolCommandParameter {
     /**
      *
      */
-    private String commandType;
+    private String otaTradeNumber;
     /**
      *
      */
-    private String commandParameterLength;
+    private String controlFlag;
     /**
-     * command parameter结构体数据
+     * TLV结构
      */
-    private CommandParameter commandParameter;
+    private List<String> commandParameterList;
 }

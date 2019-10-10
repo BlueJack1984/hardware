@@ -1,10 +1,9 @@
 package com.example.entity.protocol.carry;
 
+import com.example.entity.protocol.carry.base.NewProtocolCommandParameter;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-
-import java.io.Serializable;
 
 /**
  * 上行消息的通用实体头部
@@ -15,6 +14,8 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class CommandParameter implements Serializable {
-
+public class NewProtocolDownloadProfileDataCommandParameter extends NewProtocolCommandParameter {
+    /**
+     * command parameter属性
+      */
 }

@@ -1,7 +1,6 @@
-package com.example.entity.protocol.download.old;
+package com.example.entity.protocol.carry.old;
 
-import com.example.entity.protocol.base.DownloadBaseModel;
-import com.example.entity.protocol.base.OldProtocolDownloadBaseModel;
+import com.example.entity.protocol.carry.base.OldProtocolCommandParameter;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -15,7 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class OldProtocolDownloadLocalDataModel extends OldProtocolDownloadBaseModel {
+public class OldProtocolDownloadLocalDataCommandParameter extends OldProtocolCommandParameter {
     /**
      *
      */
