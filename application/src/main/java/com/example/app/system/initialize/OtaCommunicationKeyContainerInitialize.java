@@ -21,8 +21,8 @@ public class OtaCommunicationKeyContainerInitialize implements ApplicationRunner
     @Override
     public void run(ApplicationArguments args) throws Exception {
         Map<String, String[]> otaCommunicationKeysMap = OtaCommunicationKeyContainer.COMMUNICATION_KEY_MAP;
-        Map<String, String[]> MCC_BIT_MAP
-        Map<String, PlmnIndex> PLMN_INDEX_MAP
-        Map<String, String[]> PERS_DATA_KEY_MAP
+        Map<String, String[]> mccBitMap = OtaCommunicationKeyContainer.MCC_BIT_MAP;
+        Map<String, PlmnIndex> plmnIndexMap = OtaCommunicationKeyContainer.PLMN_INDEX_MAP;
+        Map<String, String[]> persDataKeyMap = OtaCommunicationKeyContainer.PERS_DATA_KEY_MAP;
     }
 }
