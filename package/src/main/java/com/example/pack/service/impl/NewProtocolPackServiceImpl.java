@@ -4,6 +4,8 @@ import com.example.constant.protocol.command.NewProtocolCommandTypeConstant;
 import com.example.constant.protocol.decode.NewProtocolPorIndexConstant;
 import com.example.constant.protocol.decode.NewProtocolPositionIndexConstant;
 import com.example.constant.protocol.decode.NewProtocolReceiveDataPorIndexConstant;
+import com.example.constant.protocol.decode.ProtocolIndexConstant;
+import com.example.entity.container.OtaCommunicationKeyContainer;
 import com.example.entity.pack.NewProtocolPackSubject;
 import com.example.entity.pack.NewProtocolUnpackSubject;
 import com.example.entity.protocol.base.DownloadBaseModel;
@@ -82,7 +84,35 @@ public class NewProtocolPackServiceImpl implements INewProtocolPackService {
 
     private void obtainPositionModelUniqueProperties(NewProtocolUploadPositionModel positionModel, String message) {
         log.info("进入位置上报解码特有属性模块！");
-        String[] keys = OtaCommunicationKeysContainer;
+        String manufacturerFlag = message.substring(ProtocolIndexConstant.MANUFACTURER_FLAG_INDEX_START,
+                ProtocolIndexConstant.MANUFACTURER_FLAG_INDEX_END);
+        String[] keys = OtaCommunicationKeyContainer.COMMUNICATION_KEY_MAP.get(manufacturerFlag);
+        String decodedText = "";
+        if(true) {
+            decodedText = null;
+        }else if(false) {
+            decodedText = null;
+        }else {
+            decodedText = null;
+        }
+        positionModel.setCheckNumber(decodedText.substring(NewProtocolPositionIndexConstant.CHECK_NUMBER_INDEX_START,
+                NewProtocolPositionIndexConstant.CHECK_NUMBER_INDEX_END));
+        positionModel.setLocationInformation(decodedText.substring(NewProtocolPositionIndexConstant.LOCATION_INFORMATION_INDEX_START,
+                NewProtocolPositionIndexConstant.LOCATION_INFORMATION_INDEX_END));
+        positionModel.setPrimaryIccid(decodedText.substring(NewProtocolPositionIndexConstant.PRIMARY_ICCID_INDEX_START,
+                NewProtocolPositionIndexConstant.PRIMARY_ICCID_INDEX_END));
+        positionModel.setCarryingCapacity(decodedText.substring(NewProtocolPositionIndexConstant.CARRYING_CAPACITY_INDEX_START,
+                NewProtocolPositionIndexConstant.CARRYING_CAPACITY_INDEX_END));
+        positionModel.setImei(decodedText.substring(NewProtocolPositionIndexConstant.IMEI_INDEX_START,
+                NewProtocolPositionIndexConstant.IMEI_INDEX_END));
+        positionModel.setImsi(decodedText.substring(NewProtocolPositionIndexConstant.IMSI_INDEX_START,
+                NewProtocolPositionIndexConstant.IMSI_INDEX_END));
+        positionModel.setBipImsi(decodedText.substring(NewProtocolPositionIndexConstant.BIP_IMSI_INDEX_START,
+                NewProtocolPositionIndexConstant.BIP_IMSI_INDEX_END));
+        positionModel.setCellId(decodedText.substring(NewProtocolPositionIndexConstant.BIP_CELLID_INDEX_START,
+                NewProtocolPositionIndexConstant.BIP_CELLID_INDEX_END));
+        positionModel.setLatestOtaTradeNumber(decodedText.substring(NewProtocolPositionIndexConstant.LATEST_OTA_TRADE_NUMBER_INDEX_START,
+                NewProtocolPositionIndexConstant.LATEST_OTA_TRADE_NUMBER_INDEX_END));
     }
 
     public UploadBaseModel changeMessageToPorModel(String message) {
