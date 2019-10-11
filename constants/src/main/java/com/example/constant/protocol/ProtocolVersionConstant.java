@@ -13,10 +13,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ProtocolVersionConstant {
 
-    public static final Integer PROTOCOL_VERSION_START = 1;
-
-    public static final Integer PROTOCOL_VERSION_END = 3;
-
     public static final String NEW_PROTOCOL_VERSION = "3.0.1";
 
     public static final String OLD_PROTOCOL_VERSION = "2.1.1";
