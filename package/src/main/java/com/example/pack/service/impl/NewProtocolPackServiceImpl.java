@@ -22,6 +22,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
+import java.nio.file.LinkOption;
 import java.util.List;
 
 /**
@@ -93,7 +94,8 @@ public class NewProtocolPackServiceImpl implements INewProtocolPackService {
         }else if(false) {
             decodedText = null;
         }else {
-            decodedText = null;
+            log.info("MO数据错误，数据末尾#超过了两个！");
+            return;
         }
         positionModel.setCheckNumber(decodedText.substring(NewProtocolPositionIndexConstant.CHECK_NUMBER_INDEX_START,
                 NewProtocolPositionIndexConstant.CHECK_NUMBER_INDEX_END));
