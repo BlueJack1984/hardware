@@ -82,7 +82,7 @@ public class NewProtocolPackServiceImpl implements INewProtocolPackService {
 
     private void obtainPositionModelUniqueProperties(NewProtocolUploadPositionModel positionModel, String message) {
         log.info("进入位置上报解码特有属性模块！");
-        String[] keys = null;
+        String[] keys = OtaCommunicationKeysContainer;
     }
 
     public UploadBaseModel changeMessageToPorModel(String message) {
