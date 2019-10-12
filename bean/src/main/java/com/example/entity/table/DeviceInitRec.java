@@ -16,6 +16,116 @@ import java.io.Serializable;
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class DeviceInitRec implements Serializable {
-
-
+    /**
+     *
+     */
+    private Long id;
+    /**
+     *
+     */
+    private String businessId;
+    /**
+     *
+     */
+    private String imei;
+    /**
+     *
+     */
+    private String deviceType;
+    /**
+     *
+     */
+    private String softsimType;
+    /**
+     *
+     */
+    private String iccid;
+    /**
+     *
+     */
+    private String imsi;
+    /**
+     *
+     */
+    private String supplierCode;
+    /**
+     *
+     */
+    private String supplierName;
+    /**
+     *
+     */
+    private String operatorCode;
+    /**
+     *
+     */
+    private String operatorName;
+    /**
+     *
+     */
+    private String seedIccid;
+    /**
+     *
+     */
+    private String seedImsi;
+    /**
+     *
+     */
+    private String seedSupplierCode;
+    /**
+     *
+     */
+    private String seedSupplierName;
+    /**
+     *
+     */
+    private String seedOperatorCode;
+    /**
+     *
+     */
+    private String seedOperatorName;
+    /**
+     *
+     */
+    private String status;
+    /**
+     *
+     */
+    private Long repeatReportRate;
+    /**
+     *
+     */
+    private Long retryCount;
+    /**
+     *
+     */
+    private Long reportRegularlyRate;
+    /**
+     *
+     */
+    private String bipIp;
+    /**
+     *
+     */
+    private String bipPort;
+    /**
+     *
+     */
+    private String createTime;
+    /**
+     *
+     */
+    private String executeStartTime;
+    /**
+     *
+     */
+    private String executeEndTime;
+    /**
+     *
+     */
+    private Long repeatCount;
+    /**
+     * 分散因子
+     */
+    private String numberIccid;
 }
