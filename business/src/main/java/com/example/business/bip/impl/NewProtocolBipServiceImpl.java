@@ -77,25 +77,39 @@ public class NewProtocolBipServiceImpl implements INewProtocolBipService {
         }
         log.info("设备初始化数据和mcc参数均满足要求！");
         DeviceInitRec deviceInitRec = deviceInitRecList.get(0);
+        DownloadBaseModel downloadBaseModel = null;
         if(true) {
             log.info("");
-            DownloadBaseModel downloadBaseModel = bipCommonService.pushCommandSwitchGlobalStatus(imei);
+            downloadBaseModel = bipCommonService.pushCommandSwitchGlobalStatus(imei);
             return downloadBaseModel;
         }
 
+        //处理具体操作业务
+        downloadBaseModel = handleDownloadNumberBusiness(positionModel, deviceInitRec);
+        return downloadBaseModel;
+    }
+
+    public DownloadBaseModel handleDownloadNumberBusiness(NewProtocolUploadPositionModel positionModel, DeviceInitRec deviceInitRec) {
+
+        DownloadBaseModel downloadBaseModel = null;
         String primaryIccid = positionModel.getPrimaryIccid();
-        if(primaryIccid.equals(deviceInitRec)) {
+        if(primaryIccid.equals(deviceInitRec.getSeedIccid())) {
             //种子主号
             //handle
-        }else if(primaryIccid.equals(deviceInitRec)) {
+        }else if(primaryIccid.equals(deviceInitRec.getNumberIccid())) {
             //主号状态
             //handle()
-        }else {
+        }else if(primaryIccid.equals(deviceInitRec)) {
+            //共享主号状态
+        }else if(primaryIccid.equals(deviceInitRec)) {
+            //副号状态
+        } else {
             //慧银处理种子主号下载主号
             log.info("");
         }
-        return null;
+        return downloadBaseModel;
     }
+
     public void handlePorUploadBusiness(NewProtocolUploadPorModel porModel) {
 
         String commandType = porModel.getCommandType();
