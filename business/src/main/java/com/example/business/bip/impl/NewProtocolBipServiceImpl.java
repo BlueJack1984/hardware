@@ -100,11 +100,13 @@ public class NewProtocolBipServiceImpl implements INewProtocolBipService {
             downloadBaseModel = handleSeedIccidStatusBusiness(positionModel, softsimType);
         }else if(primaryIccid.equals(deviceInitRec.getNumberIccid())) {
             //主号状态
-            //handle()
+            //handlePrimaryIccidStatusBusiness()
         }else if(primaryIccid.equals(deviceInitRec)) {
             //共享主号状态
+            //handleSharedPrimaryIccidStatusBusiness();
         }else if(primaryIccid.equals(deviceInitRec)) {
             //副号状态
+            //handleLocalIccidStatusBusiness();
         } else {
             //慧银处理种子主号下载主号
             log.info("");
