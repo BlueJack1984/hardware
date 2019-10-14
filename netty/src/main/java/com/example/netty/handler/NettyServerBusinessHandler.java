@@ -1,4 +1,4 @@
-package com.example.app.controller.netty;
+package com.example.netty.handler;
 
 import com.iot.service.interfaces.AutoAPNBusinessService;
 import io.netty.buffer.Unpooled;
