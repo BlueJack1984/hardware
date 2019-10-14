@@ -22,7 +22,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
-import java.nio.file.LinkOption;
 import java.util.List;
 
 /**
@@ -161,6 +160,7 @@ public class NewProtocolPackServiceImpl implements INewProtocolPackService {
         StringBuffer downMessage = new StringBuffer("");
         NewProtocolDownloadModel model = (NewProtocolDownloadModel)downloadBaseModel;
         //这里判断命令类型
+        
         String batchNumber;
         String messageTotalNumber;
         String currentMessageIndex;

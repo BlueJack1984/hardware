@@ -2,6 +2,7 @@ package com.example.business.bip.impl;
 
 import com.example.business.bip.ICommonBipService;
 import com.example.business.bip.INewProtocolBipService;
+import com.example.constant.bip.DeviceInitSoftsimTypeConstant;
 import com.example.constant.protocol.command.NewProtocolCommandTypeConstant;
 import com.example.core.service.IDeviceInitRecService;
 import com.example.entity.protocol.base.DownloadBaseModel;
@@ -95,7 +96,8 @@ public class NewProtocolBipServiceImpl implements INewProtocolBipService {
         String primaryIccid = positionModel.getPrimaryIccid();
         if(primaryIccid.equals(deviceInitRec.getSeedIccid())) {
             //种子主号
-            //handle
+            String softsimType = deviceInitRec.getSoftsimType();
+            downloadBaseModel = handleSeedIccidStatusBusiness(positionModel, softsimType);
         }else if(primaryIccid.equals(deviceInitRec.getNumberIccid())) {
             //主号状态
             //handle()
@@ -105,6 +107,25 @@ public class NewProtocolBipServiceImpl implements INewProtocolBipService {
             //副号状态
         } else {
             //慧银处理种子主号下载主号
+            log.info("");
+        }
+        return downloadBaseModel;
+    }
+
+    public DownloadBaseModel handleSeedIccidStatusBusiness(NewProtocolUploadPositionModel positionModel, String softsimType) {
+
+        DownloadBaseModel downloadBaseModel = null;
+        if(DeviceInitSoftsimTypeConstant.DOWNLOAD_PRIMARY_NUMBER_TYPE.equals(softsimType)) {
+
+        }else if(DeviceInitSoftsimTypeConstant.DOWNLOAD_LOCAL_NUMBER_TYPE.equals(softsimType)) {
+
+        }else if(DeviceInitSoftsimTypeConstant.DOWNLOAD_SHARED_PRIMARY_NUMBER_TYPE.equals(softsimType)) {
+
+        }else if(DeviceInitSoftsimTypeConstant.DOWNLOAD_PRIMARY_AND_LOCAL_NUMBER_TYPE.equals(softsimType)) {
+
+        }else if(DeviceInitSoftsimTypeConstant.DOWNLOAD_SHARED_PRIMARY_AND_LOCAL_NUMBER_TYPE.equals(softsimType)) {
+
+        }else {
             log.info("");
         }
         return downloadBaseModel;
