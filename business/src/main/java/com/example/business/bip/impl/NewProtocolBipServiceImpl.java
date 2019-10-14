@@ -118,15 +118,17 @@ public class NewProtocolBipServiceImpl implements INewProtocolBipService {
 
         DownloadBaseModel downloadBaseModel = null;
         if(DeviceInitSoftsimTypeConstant.DOWNLOAD_PRIMARY_NUMBER_TYPE.equals(softsimType)) {
-
+            bipCommonService.getPrimaryNumberInformation(softsimType);
         }else if(DeviceInitSoftsimTypeConstant.DOWNLOAD_LOCAL_NUMBER_TYPE.equals(softsimType)) {
-
+            bipCommonService.getLocalNumberInformation(softsimType);
         }else if(DeviceInitSoftsimTypeConstant.DOWNLOAD_SHARED_PRIMARY_NUMBER_TYPE.equals(softsimType)) {
-
+            bipCommonService.getSharedPrimaryNumberInformation(softsimType);
         }else if(DeviceInitSoftsimTypeConstant.DOWNLOAD_PRIMARY_AND_LOCAL_NUMBER_TYPE.equals(softsimType)) {
-
+            bipCommonService.getPrimaryNumberInformation(softsimType);
+            bipCommonService.getLocalNumberInformation(softsimType);
         }else if(DeviceInitSoftsimTypeConstant.DOWNLOAD_SHARED_PRIMARY_AND_LOCAL_NUMBER_TYPE.equals(softsimType)) {
-
+            bipCommonService.getSharedPrimaryNumberInformation(softsimType);
+            bipCommonService.getLocalNumberInformation(softsimType);
         }else {
             log.info("");
         }
