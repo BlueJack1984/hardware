@@ -31,6 +31,7 @@
         <module>library</module>
         <module>dubbo</module>
         <module>zookeeper</module>
+        <module>netty</module>
     </modules>
 
     <properties>
@@ -40,6 +41,7 @@
         <httpcore.version>4.4.12</httpcore.version>
         <httpclient.version>4.5.9</httpclient.version>
         <fastjson.version>1.2.61</fastjson.version>
+        <netty.version>5.0.0.Alpha2</netty.version>
     </properties>
 
     <!--这里管理所有要使用的依赖-->
@@ -64,6 +66,11 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
