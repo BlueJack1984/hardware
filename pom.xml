@@ -39,7 +39,7 @@
         <!--这里添加所有需要的依赖的版本，用于控制版本-->
         <commons.lang3.version>3.8.1</commons.lang3.version>
         <httpcore.version>4.4.12</httpcore.version>
-        <httpclient.version>4.5.9</httpclient.version>
+        <httpclient.version>4.5.13</httpclient.version>
         <fastjson.version>1.2.61</fastjson.version>
         <netty.version>5.0.0.Alpha2</netty.version>
     </properties>
